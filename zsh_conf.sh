@@ -18,6 +18,16 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 EOF 
 
+
+# Install ctags
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
+# Install ripgrep
+brew install ripgrep
+
+# Install keybase
+brew install keybase
+
 # Install autosuggestion
 # plugins=(git zsh-autosuggestions)
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -29,7 +39,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # Install fasd
 brew install fasd
 
+# Install node for coc
+curl -sL install-node.now.sh | sh
 
+# Install vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-
-
+# git gutter
+mkdir -p ~/.config/nvim/pack/airblade/start
+cd ~/.config/nvim/pack/airblade/start
+git clone https://github.com/airblade/vim-gitgutter.git
+nvim -u NONE -c "helptags vim-gitgutter/doc" -c q
