@@ -1,3 +1,9 @@
+# Install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install zshell
+brew install zsh
+
 # Install p10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
@@ -25,8 +31,11 @@ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 # Install ripgrep
 brew install ripgrep
 
+# Install gpg
+brew install gpg
+
 # Install keybase
-brew install keybase
+brew cask install keybase
 
 # Install autosuggestion
 # plugins=(git zsh-autosuggestions)
